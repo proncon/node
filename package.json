@@ -24,7 +24,7 @@
       "html-minifier": "1.4.0",
       "htmlparser2": "3.7.x",
       "htmltidy": "0.0.6",
-      "lodash": "^3.10.0",
+      "lodash": "^4.17.5",
       "md5": "^2.0.0",
       "mkdirp": "^0.5.1",
       "modesl": "^1.2.0",
