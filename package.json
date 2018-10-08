@@ -9,7 +9,18 @@
    "devDependencies": {
       "istanbul": "^0.4.5",
       "mocha": "1.20.1",
+      "nyc": "^13.0.1",
       "supertest": "0.13.0",
+      "tap": "^12.0.1",
       "tape": "^4.9.1"
+   },
+   "scripts": {
+      "start": "node index.js",
+      "test": "node ./node_modules/mocha/bin/mocha",
+      "test-cover": "istanbul cover ./node_modules/mocha/bin/mocha --include-all-sources test/*.js && istanbul check-coverage",
+      "ci-test": "istanbul cover ./node_modules/mocha/bin/mocha \"test/*.js\" > test.tap && istanbul report clover",
+      "coverage": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --ui bdd -R spec -t 5000",
+      "test-nyc": "nyc --reporter=html --reporter=text --reporter=clover mocha --timeout=3000",
+      "test-tap": "tap test/*.js --coverage"
    }
 }
